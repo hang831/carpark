@@ -181,21 +181,23 @@
                           <div id="collapseC" class="collapse" aria-labelledby="headingC" data-parent="#accordionExample">
                             <div class="card-body">
                                  <form name="contact" method="POST" netlify>
-                                  <p>
-                                    <label>名字: <input type="text" name="name" /></label>
-                                  </p>
-                                  <p>
-                                    <label>电邮: <input type="email" name="email" /></label>
-                                  </p>
-                                  <p>
-                                  </p>
-                                  <p>
-                                    <label>信息: <textarea name="message"></textarea></label>
-                                  </p>
-                                  <p>
-                                    <button type="submit">传送</button>
-                                  </p>
+                                     <form name="contact" method="POST" netlify>
+                                     <div class="form-group">
+                                        <label for="exampleInputEmail1">电邮</label>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                        <small id="emailHelp" class="form-text text-muted">我们绝不会与任何人分享您的电子邮件。</small>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="exampleInputPassword1">名字</label>
+                                        <input type="text" name="name" class="form-control" id="exampleInputPassword1" required>
+                                      </div>
+                                       <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">信息</label>
+                                        <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                      </div>
+                                      <button type="submit" class="btn btn-primary">传送</button>                                
                                 </form>
+
                             </div>
                           </div>
                       </div>
