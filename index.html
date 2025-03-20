@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Park App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            background: url('AdobeStock_372367644.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.5); /* Optional: adds a dark overlay for better readability */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .language-section {
+            margin: 20px 0;
+        }
+        .btn-submit {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Car Park App</h1>
+        <div class="language-section">
+            <select class="form-control" id="languageSelect">
+                <option value="en">English</option>
+                <option value="tc">繁體中文</option>
+                <option value="sc">简体中文</option>
+            </select>
+        </div>
+        <button class="btn btn-primary btn-submit" onclick="submitLanguage()">Submit</button>
+    </div>
+
+    <script>
+        function submitLanguage() {
+            const selectedLanguage = document.getElementById('languageSelect').value;
+            // Redirect to the new page based on the selected language
+            if (selectedLanguage === 'tc') {
+                window.location.href = 'cp_tc.html'; // Redirect to cp_tc.html for Traditional Chinese
+            } else if (selectedLanguage === 'sc') {
+                window.location.href = 'cp_sc.html'; // You can create another page for Simplified Chinese if needed
+            } else {
+                window.location.href = 'cp_en.html'; // You can create another page for English if needed
+            }
+        }
+    </script>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('ServiceWorker registration successful:', registration);
+                })
+                .catch((error) => {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+        });
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
